@@ -1,5 +1,6 @@
 # larproyecto
-Codigo para la capacitación de Introducción a Laravel 9
+Aplicando realizado en framework Laravel 9 en PHP, con inicio de sesión de Breeze, se creo la Base de datos, se realizo las migraciones para este proyecto.
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
