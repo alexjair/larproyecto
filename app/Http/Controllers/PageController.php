@@ -8,27 +8,31 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     //
-    public function home(){
-        return view('home');
-    }
+    public function home(Request $request){
 
-    public function blog(){
-        
         /* Consulta all registros de Post*/ 
         //$posts = Post::get();
 
         //$Post = Post::firt();
         //$Post = Post::find(25);
     
-        //
-        
-        $posts = Post::latest()->paginate();
-        
-        return view('blog', ['posts' => $posts]);
+        $search = $request->search;
+
+        //dd($search);
+
+        //$posts = Post::latest()->paginate();
+        $posts = Post::where('title','LIKE',"%{$search}%")
+                        ->with('user')
+                        ->latest()
+                        ->paginate();
+        //dd($posts);
+
+        return view('home', ['posts' => $posts]);
     }
 
     public function post(Post $post){
         //dd($post);
+
         return view('post', ['post' => $post]);
     }
 }
